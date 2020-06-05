@@ -9,40 +9,40 @@ spring:
     url: jdbc:mysql://localhost:3306/springboot_single?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
     username: root
     password: root
-    #±íÃ÷²»Ê¹ÓÃÄ¬ÈÏµÄHikari£¬¶øÊ¹ÓÃdruid
+    #è¡¨æ˜ä¸ä½¿ç”¨é»˜è®¤çš„Hikariï¼Œè€Œä½¿ç”¨druid
     type: com.alibaba.druid.pool.DruidDataSource
-    #druidÅäÖÃ
+    #druidé…ç½®
     druid:
-      initial-size: 5 #³õÊ¼»¯´óĞ¡
-      min-idle: 5 #×îĞ¡
-      max-active: 20  #×î´ó
-      max-wait: 60000 #»ñÈ¡Á¬½ÓµÈ´ı³¬Ê±µÄÊ±¼ä
-      time-between-eviction-runs-millis: 60000 #ÅäÖÃ¼ä¸ô¶à¾Ã²Å½øĞĞÒ»´Î¼ì²â£¬¼ì²âĞèÒª¹Ø±ÕµÄ¿ÕÏĞÁ¬½Ó£¬µ¥Î»ÊÇºÁÃë 60S
-      min-evictable-idle-time-millis: 300000  # ÅäÖÃÒ»¸öÁ¬½ÓÔÚ³ØÖĞ×îĞ¡Éú´æµÄÊ±¼ä£¬µ¥Î»ÊÇºÁÃë300S
-      #²âÊÔÁ¬½Ó
+      initial-size: 5 #åˆå§‹åŒ–å¤§å°
+      min-idle: 5 #æœ€å°
+      max-active: 20  #æœ€å¤§
+      max-wait: 60000 #è·å–è¿æ¥ç­‰å¾…è¶…æ—¶çš„æ—¶é—´
+      time-between-eviction-runs-millis: 60000 #é…ç½®é—´éš”å¤šä¹…æ‰è¿›è¡Œä¸€æ¬¡æ£€æµ‹ï¼Œæ£€æµ‹éœ€è¦å…³é—­çš„ç©ºé—²è¿æ¥ï¼Œå•ä½æ˜¯æ¯«ç§’ 60S
+      min-evictable-idle-time-millis: 300000  # é…ç½®ä¸€ä¸ªè¿æ¥åœ¨æ± ä¸­æœ€å°ç”Ÿå­˜çš„æ—¶é—´ï¼Œå•ä½æ˜¯æ¯«ç§’300S
+      #æµ‹è¯•è¿æ¥
       test-while-idle: true
       test-on-borrow: false
       test-on-return: false
-      # ´ò¿ªPSCache£¬²¢ÇÒÖ¸¶¨Ã¿¸öÁ¬½ÓÉÏPSCacheµÄ´óĞ¡
+      # æ‰“å¼€PSCacheï¼Œå¹¶ä¸”æŒ‡å®šæ¯ä¸ªè¿æ¥ä¸ŠPSCacheçš„å¤§å°
       pool-prepared-statements: true
       max-pool-prepared-statement-per-connection-size: 20
-      # ÅäÖÃ¼à¿ØÍ³¼ÆÀ¹½ØµÄfilters
+      # é…ç½®ç›‘æ§ç»Ÿè®¡æ‹¦æˆªçš„filters
       filters: statc
-      #asyncInitÊÇ1.1.4ÖĞĞÂÔö¼ÓµÄÅäÖÃ£¬Èç¹ûÓĞinitialSizeÊıÁ¿½Ï¶àÊ±£¬´ò¿ª»á¼Ó¿ìÓ¦ÓÃÆô¶¯Ê±¼ä
+      #asyncInitæ˜¯1.1.4ä¸­æ–°å¢åŠ çš„é…ç½®ï¼Œå¦‚æœæœ‰initialSizeæ•°é‡è¾ƒå¤šæ—¶ï¼Œæ‰“å¼€ä¼šåŠ å¿«åº”ç”¨å¯åŠ¨æ—¶é—´
       async-init: true
 
 #pagehelper:
-#  #·ÖÒ³²å¼ş»á×Ô¶¯¼ì²âµ±Ç°µÄÊı¾İ¿âÁ´½Ó£¬×Ô¶¯Ñ¡ÔñºÏÊÊµÄ·ÖÒ³·½Ê½¡£ÄãÒ²¿ÉÒÔÅäÖÃhelperDialectÊôĞÔÀ´Ö¸¶¨·ÖÒ³²å¼şÊ¹ÓÃÄÄÖÖ·½ÑÔ
+#  #åˆ†é¡µæ’ä»¶ä¼šè‡ªåŠ¨æ£€æµ‹å½“å‰çš„æ•°æ®åº“é“¾æ¥ï¼Œè‡ªåŠ¨é€‰æ‹©åˆé€‚çš„åˆ†é¡µæ–¹å¼ã€‚ä½ ä¹Ÿå¯ä»¥é…ç½®helperDialectå±æ€§æ¥æŒ‡å®šåˆ†é¡µæ’ä»¶ä½¿ç”¨å“ªç§æ–¹è¨€
 #  helper-dialect: mysql
-#  #·ÖÒ³ºÏÀí»¯²ÎÊı£¬Ä¬ÈÏÖµÎªfalse¡£µ±¸Ã²ÎÊıÉèÖÃÎª true Ê±£¬pageNum<=0 Ê±»á²éÑ¯µÚÒ»Ò³£¬ pageNum>pages£¨³¬¹ı×ÜÊıÊ±£©£¬»á²éÑ¯×îºóÒ»Ò³¡£Ä¬ÈÏfalse Ê±£¬Ö±½Ó¸ù¾İ²ÎÊı½øĞĞ²éÑ¯¡£
+#  #åˆ†é¡µåˆç†åŒ–å‚æ•°ï¼Œé»˜è®¤å€¼ä¸ºfalseã€‚å½“è¯¥å‚æ•°è®¾ç½®ä¸º true æ—¶ï¼ŒpageNum<=0 æ—¶ä¼šæŸ¥è¯¢ç¬¬ä¸€é¡µï¼Œ pageNum>pagesï¼ˆè¶…è¿‡æ€»æ•°æ—¶ï¼‰ï¼Œä¼šæŸ¥è¯¢æœ€åä¸€é¡µã€‚é»˜è®¤false æ—¶ï¼Œç›´æ¥æ ¹æ®å‚æ•°è¿›è¡ŒæŸ¥è¯¢ã€‚
 #  reasonable: false
-#  #Ä¬ÈÏÖµfalse£¬·ÖÒ³²å¼ş»á´Ó²éÑ¯·½·¨µÄ²ÎÊıÖµÖĞ£¬×Ô¶¯¸ù¾İparams ÅäÖÃµÄ×Ö¶ÎÖĞÈ¡Öµ£¬²éÕÒµ½ºÏÊÊµÄÖµÊ±¾Í»á×Ô¶¯·ÖÒ³¡£
+#  #é»˜è®¤å€¼falseï¼Œåˆ†é¡µæ’ä»¶ä¼šä»æŸ¥è¯¢æ–¹æ³•çš„å‚æ•°å€¼ä¸­ï¼Œè‡ªåŠ¨æ ¹æ®params é…ç½®çš„å­—æ®µä¸­å–å€¼ï¼ŒæŸ¥æ‰¾åˆ°åˆé€‚çš„å€¼æ—¶å°±ä¼šè‡ªåŠ¨åˆ†é¡µã€‚
 #  support-methods-arguments: true
-#  #ÓÃÓÚ´Ó¶ÔÏóÖĞ¸ù¾İÊôĞÔÃûÈ¡Öµ£¬¿ÉÒÔÅäÖÃ pageNum,pageSize,count,pageSizeZero,reasonable£¬²»ÅäÖÃÓ³ÉäµÄÓÃÄ¬ÈÏÖµ
-#  #Ä¬ÈÏÖµÎªpageNum=pageNum;pageSize=pageSize;count=countSql;reasonable=reasonable;pageSizeZero=pageSizeZero
+#  #ç”¨äºä»å¯¹è±¡ä¸­æ ¹æ®å±æ€§åå–å€¼ï¼Œå¯ä»¥é…ç½® pageNum,pageSize,count,pageSizeZero,reasonableï¼Œä¸é…ç½®æ˜ å°„çš„ç”¨é»˜è®¤å€¼
+#  #é»˜è®¤å€¼ä¸ºpageNum=pageNum;pageSize=pageSize;count=countSql;reasonable=reasonable;pageSizeZero=pageSizeZero
 #  params: count=countSql
 
 logging:
   level:
-    com.minwujun.springbootdemo.mapper: debug
+    com.minwujun.springbootsingle.mapper: debug
 

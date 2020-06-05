@@ -10,21 +10,21 @@ import lombok.EqualsAndHashCode;
 @Data
 @TableName("t_user")
 public class User extends BaseEntity {
-    @TableField("account")
+//    @TableField("account")
     private String account;
 
-    @TableField("password")
+//    @TableField("password")
     private String password;
 
-    @TableField("nick_name")
+//    @TableField("nick_name")
     private String nickName;
 
-    @TableField("email")
+//    @TableField("email")
     private String email;
 
-    @TableField("phone")
+//    @TableField("phone")
     private String phone;
 
-    @TableField("status")
+//    @TableField("status")
     private YNEnum status;
 }
